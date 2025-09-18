@@ -1,0 +1,150 @@
+/* =======================
+   Global Styles & Colors
+   ======================= */
+:root {
+  --ink: midnightblue;
+  --ink-soft: slateblue;
+  --bg: lavender;
+  --card: aliceblue;
+  --accent: mediumslateblue;
+  --muted: darkslategray;
+  --table-stripe: lavenderblush;
+  --code-bg: lavender;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--muted);
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  line-height: 1.6;
+}
+
+/* =======================
+   Layout
+   ======================= */
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1.25rem;
+}
+
+.site-header {
+  background: linear-gradient(180deg, var(--accent), var(--ink));
+  color: white;
+  padding: 2.5rem 0 2rem;
+  border-bottom: 4px solid var(--ink-soft);
+}
+
+.site-header h1 {
+  margin: 0 0 .25rem 0;
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+}
+
+.subtitle {
+  margin: 0 0 1rem 0;
+  opacity: 0.9;
+}
+
+.toc {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem .75rem;
+}
+.toc a {
+  color: white;
+  background: rgba(255,255,255,.15);
+  padding: .4rem .65rem;
+  border-radius: .5rem;
+  text-decoration: none;
+  border: 1px solid rgba(255,255,255,.25);
+}
+.toc a:hover { background: rgba(255,255,255,.25); }
+
+.card {
+  background: var(--card);
+  border: 2px solid var(--ink-soft);
+  border-radius: .75rem;
+  padding: 1rem;
+  margin: 1.25rem 0;
+  box-shadow: 0 6px 16px rgba(25,25,112,.15);
+}
+
+.card h2 {
+  color: var(--ink);
+  margin-top: 0;
+}
+
+/* =======================
+   Tables
+   ======================= */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: .75rem;
+  background: white;
+  border: 2px solid var(--ink-soft);
+  border-radius: .5rem;
+  overflow: hidden;
+  table-layout: fixed; /* equal-width columns */
+}
+
+caption {
+  caption-side: top;
+  text-align: left;
+  padding: .6rem .75rem;
+  background: var(--table-stripe);
+  color: var(--ink);
+  font-weight: 600;
+  border-bottom: 1px solid var(--ink-soft);
+}
+
+thead th {
+  background: var(--accent);
+  color: white;
+  text-align: left;
+  padding: .75rem;
+  font-weight: 700;
+  border-bottom: 2px solid var(--ink-soft);
+}
+
+tbody td {
+  padding: .75rem;
+  vertical-align: top;
+  border-bottom: 1px solid #eee;
+  word-break: break-word;       /* wrap long words */
+  overflow-wrap: anywhere;
+  white-space: normal;
+}
+
+tbody tr:nth-child(even) {
+  background: #fafaff;
+}
+
+/* =======================
+   Code-style Elements
+   ======================= */
+.code, code, kbd, samp {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  background: var(--code-bg);
+  color: var(--ink);
+  padding: .1rem .3rem;
+  border-radius: .35rem;
+  border: 1px solid var(--ink-soft);
+  white-space: pre-wrap;       /* wrap long code */
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+
+/* =======================
+   Footer
+   ======================= */
+.site-footer {
+  text-align: center;
+  padding: 2rem 0 3rem;
+  color: var(--muted);
+}
+.site-footer p { margin: 0; }
