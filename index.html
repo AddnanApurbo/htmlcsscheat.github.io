@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Web Dev Cheat Sheet — HTML & CSS</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1>Web Dev Cheat Sheet</h1>
+      <p class="subtitle">Quick reference for common <span class="code">&lt;HTML&gt;</span> tags and CSS selectors/properties.</p>
+      <nav class="toc">
+        <a href="#html-tables">HTML: Tables</a>
+        <a href="#html-tags">HTML: Common Tags</a>
+        <a href="#css-selectors">CSS: Selectors</a>
+        <a href="#css-properties">CSS: Common Properties</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- HTML TABLES -->
+    <section id="html-tables" class="card">
+      <h2>HTML: Tables</h2>
+      <p>Use tables to display tabular data. Remember to label columns with a table header row.</p>
+
+      <table>
+        <caption>Table Elements &amp; Attributes</caption>
+        <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Syntax (as text)</th>
+            <th scope="col">What it does</th>
+            <th scope="col">Example</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="code">table</span></td>
+            <td><span class="code">&lt;table&gt; ... &lt;/table&gt;</span></td>
+            <td>Container for tabular data.</td>
+            <td><span class="code">&lt;table&gt;...&lt;/table&gt;</span></td>
+          </tr>
+          <tr>
+            <td><span class="code">thead</span></td>
+            <td><span class="code">&lt;thead&gt; ... &lt;/thead&gt;</span></td>
+            <td>Groups the header row(s) of a table.</td>
+            <td><span class="code">&lt;thead&gt;&lt;tr&gt;...&lt;/tr&gt;&lt;/thead&gt;</span></td>
+          </tr>
+          <tr>
+            <td><span class="code">tbody</span></td>
+            <td><span class="code">&lt;tbody&gt; ... &lt;/tbody&gt;</span></td>
+            <td>Groups the main body rows.</td>
+            <td><span class="code">&lt;tbody&gt;&lt;tr&gt;...&lt;/tr&gt;&lt;/tbody&gt;</span></td>
+          </tr>
+          <tr>
+            <td><span class="code">tr</span></td>
+            <td><span class="code">&lt;tr&gt; ... &lt;/tr&gt;</span></td>
+            <td>Defines a table row.</td>
+            <td><span class="code">&lt;tr&gt;&lt;td&gt;A1&lt;/td&gt;&lt;td&gt;B1&lt;/td&gt;&lt;/tr&gt;</span></td>
+          </tr>
+          <tr>
+            <td><span class="code">th</span></td>
+            <td><span class="code">&lt;th scope="col"&gt;Name&lt;/th&gt;</span></td>
+            <td>Header cell (use <span class="code">scope</span> for accessibility).</td>
+            <td><span class="code">&lt;th scope="row"&gt;Total&lt;/th&gt;</span></td>
+          </tr>
+          <tr>
+            <td><span class="code">td</span></td>
+            <td><span class="code">&lt;td&gt;Data&lt;/td&gt;</span></td>
+            <td>Standard table cell.</td>
+            <td><span class="code">&lt;td&gt;42&lt;/td&gt;</span></td>
+          </tr>
+          <tr>
+            <td><span class="code">caption</span></td>
+            <td><span class="code">&lt;caption&gt;Title&lt;/caption&gt;</span></td>
+            <td>Accessible title/label for the table.</td>
+            <td><span class="code">&lt;caption&gt;Monthly Sales&lt;/caption&gt;</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- HTML COMMON TAGS -->
+    <section id="html-tags" class="card">
+      <h2>HTML: Common Tags</h2>
+      <table>
+        <caption>Frequent HTML Tags</caption>
+        <thead>
+          <tr>
+            <th scope="col">Tag</th>
+            <th scope="col">Syntax (as text)</th>
+            <th scope="col">Use Case</th>
+            <th scope="col">Example</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="code">h1</span>–<span class="code">h6</span></td>
+            <td><span class="code">&lt;h1&gt;Heading&lt;/h1&gt;</span></td>
+            <td>Headings (h1 is most important)</td>
+            <td><span class="code">&lt;h2&gt;Section Title&lt;/h2&gt;</span></td>
+          </tr>
+          <tr>
+            <td><span class="code">p</span></td>
+            <td><span class="code">&lt;p&gt;Text&lt;/p&gt;</span></td>
+            <td>Paragraph of text.</td>
+            <td><span class="code">&lt;p&gt;Hello world!&lt;/p&gt;</span></td>
+          </tr>
+          <tr>
+            <td><span class="code">a</span></td>
+            <td><span class="code">&lt;a href="https://example.com"&gt;Link&lt;/a&gt;</span></td>
+            <td>Hyperlink to another page/section.</td>
+            <td><span class="code">&lt;a href="#top"&gt;Back to top&lt;/a&gt;</span></td>
+          </tr>
+          <tr>
+            <td><span class="code">ul</span>/<span class="code">ol</span>/<span class="code">li</span></td>
+            <td><span class="code">&lt;ul&gt;&lt;li&gt;Item&lt;/li&gt;&lt;/ul&gt;</span></td>
+            <td>Lists (unordered/ordered).</td>
+            <td><span class="code">&lt;ol&gt;&lt;li&gt;Step 1&lt;/li&gt;&lt;/ol&gt;</span></td>
+          </tr>
+          <tr>
+            <td><span class="code">img</span></td>
+            <td><span class="code">&lt;img src="cat.jpg" alt="A cat" /&gt;</span></td>
+            <td>Embeds an image (include <span class="code">alt</span> text).</td>
+            <td><span class="code">&lt;img src="logo.png" alt="Site logo" /&gt;</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- CSS SELECTORS -->
+    <section id="css-selectors" class="card">
+      <h2>CSS: Selectors &amp; Specificity</h2>
+      <table>
+        <caption>Common Selectors</caption>
+        <thead>
+          <tr>
+            <th scope="col">Selector</th>
+            <th scope="col">Pattern (as text)</th>
+            <th scope="col">Matches</th>
+            <th scope="col">Example</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Type</td>
+            <td><span class="code">p</span></td>
+            <td>All <span class="code">&lt;p&gt;</span> elements</td>
+            <td><span class="code">p { margin: 0; }</span></td>
+          </tr>
+          <tr>
+            <td>Class</td>
+            <td><span class="code">.card</span></td>
+            <td>Elements with <span class="code">class="card"</span></td>
+            <td><span class="code">.card { padding: 1rem; }</span></td>
+          </tr>
+          <tr>
+            <td>ID</td>
+            <td><span class="code">#main</span></td>
+            <td>Element with <span class="code">id="main"</span></td>
+            <td><span class="code">#main { max-width: 960px; }</span></td>
+          </tr>
+          <tr>
+            <td>Descendant</td>
+            <td><span class="code">nav a</span></td>
+            <td><span class="code">&lt;a&gt;</span> inside <span class="code">&lt;nav&gt;</span></td>
+            <td><span class="code">nav a { text-decoration: none; }</span></td>
+          </tr>
+          <tr>
+            <td>Attribute</td>
+            <td><span class="code">img[alt]</span></td>
+            <td><span class="code">&lt;img&gt;</span> with an <span class="code">alt</span> attribute</td>
+            <td><span class="code">img[alt] { border: 0; }</span></td>
+          </tr>
+          <tr>
+            <td>Pseudo-class</td>
+            <td><span class="code">a:hover</span></td>
+            <td>Links on hover</td>
+            <td><span class="code">a:hover { opacity: .8; }</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- CSS PROPERTIES -->
+    <section id="css-properties" class="card">
+      <h2>CSS: Common Properties</h2>
+      <table>
+        <caption>Frequently Used Properties</caption>
+        <thead>
+          <tr>
+            <th scope="col">Property</th>
+            <th scope="col">Value (example)</th>
+            <th scope="col">What it does</th>
+            <th scope="col">Example Rule</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="code">color</span></td>
+            <td><span class="code">midnightblue</span></td>
+            <td>Text color.</td>
+            <td><span class="code">h1 { color: midnightblue; }</span></td>
+          </tr>
+          <tr>
+            <td><span class="code">background-color</span></td>
+            <td><span class="code">aliceblue</span></td>
+            <td>Background color of an element.</td>
+            <td><span class="code">.card { background-color: aliceblue; }</span></td>
+          </tr>
+          <tr>
+            <td><span class="code">font-family</span></td>
+            <td><span class="code">"Gill Sans", Arial, sans-serif</span></td>
+            <td>Typeface stack for text.</td>
+            <td><span class="code">body { font-family: Arial, sans-serif; }</span></td>
+          </tr>
+          <tr>
+            <td><span class="code">border</span></td>
+            <td><span class="code">2px solid slateblue</span></td>
+            <td>Draws a border around the element.</td>
+            <td><span class="code">table { border: 2px solid slateblue; }</span></td>
+          </tr>
+          <tr>
+            <td><span class="code">padding</span></td>
+            <td><span class="code">1rem</span></td>
+            <td>Space inside the border.</td>
+            <td><span class="code">.card { padding: 1rem; }</span></td>
+          </tr>
+          <tr>
+            <td><span class="code">margin</span></td>
+            <td><span class="code">1rem auto</span></td>
+            <td>Space outside the border.</td>
+            <td><span class="code">.container { margin: 0 auto; }</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Keep extending this cheat sheet as you learn! 🚀</p>
+    </div>
+  </footer>
+</body>
+</html>
